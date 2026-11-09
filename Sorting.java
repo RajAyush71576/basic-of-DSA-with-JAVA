@@ -41,6 +41,34 @@ public class Sorting{
         }
     }
 
+    public static void countingSort(int array[]){
+        //find maximum element in array
+        int max = array[0];
+        for(int i=1; i<array.length; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+
+        //create count array
+        int count[] = new int[max+1];
+        //count occurrences
+        for(int i=0; i<array.length; i++){
+            count[array[i]]++;
+        }
+
+        //re-build original array with respect to count array
+        int index = 0;
+        for(int i=count.length-1; i>=0; i--){
+            while(count[i] > 0){
+                array[index] = i;
+                index++;
+                count[i]--;
+            }
+        }
+
+    }
+
     public static void printArray(int array[]){
         for(int i=0; i<array.length; i++){
             System.out.print(array[i]+" ");
@@ -50,7 +78,8 @@ public class Sorting{
         int array[] = {5,4,1,3,2};
         // bubbleSort(array);
         // selectionSort(array);
-        insertionSort(array);
+        // insertionSort(array);
+        countingSort(array);
         printArray(array);
     }
 }
