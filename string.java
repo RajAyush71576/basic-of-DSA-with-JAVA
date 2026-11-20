@@ -4,11 +4,16 @@ public class string{
     public static void main(String[] args){
         String str = "racecar";
         isPalindrome(str);
+        System.out.println();
 
         //given a route containing 4 direction (E,W,N,S), find the shortest path to reach destination.
         String str_dir = "WNEENESENNN";
         System.out.print(shortestPath(str_dir));
+        System.out.println();
 
+        //for sub String
+        substring(str, 1, 4);
+        System.out.println();
     }
 
     public static boolean isPalindrome(String str){
@@ -42,5 +47,13 @@ public class string{
         int X2 = X*X;
         int Y2 = Y*Y;
         return (float)Math.sqrt(X2 + Y2);
+    }
+
+    public static void substring(String str, int st, int end){
+        String subStr = "";
+        for(int i=st; i<end; i++){
+            subStr += str.charAt(i);
+        }
+        System.out.print(subStr);
     }
 }
