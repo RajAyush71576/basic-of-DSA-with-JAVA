@@ -24,6 +24,11 @@ public class stringMethod{
             System.out.print("strings are not equal");
         }
 
+        //an method for converting any object into string but variable should be a object class
+        Integer num = 9;
+        num.toString();
+        System.out.print(num);
+
         //for a given set of strings, print the largest string
         String fruits[] = {"apple", "bananna", "mango"};
         String largestFruit = fruits[0];
@@ -35,5 +40,12 @@ public class stringMethod{
         }
 
         System.out.print(largestFruit);
+
+        //without string builder there is no change in string possible by this loop its time complexity is worse O(nxm), always copy the previous string n times. 
+        StringBuilder sb = new StringBuilder("");
+        for(char ch='a'; ch<='z'; ch++){
+            sb.append(ch);
+        }//but now with string builder O(n).
+        System.out.print(sb);
     }
 }
